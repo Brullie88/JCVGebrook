@@ -104,7 +104,7 @@ export default function SponsorsSection() {
           <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-5xl md:text-6xl uppercase mb-8 leading-tight">
-                Word ook <br />
+                Word <br />
                 <span className="text-carnaval-yellow">Sponsor!</span>
               </h2>
               <p className="text-xl text-carnaval-cream/70 font-accent mb-10 leading-relaxed">
@@ -207,7 +207,7 @@ function SponsorForm() {
         disabled={state.submitting}
         className="w-full py-5 rounded-xl yellow-gradient text-carnaval-charcoal font-display text-xl tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {state.submitting ? "VERZENDEN..." : "AANMELDEN ALS SPONSOR"}
+        {state.submitting ? "VERZENDEN..." : "WORD SPONSOR"}
       </button>
     </form>
   );
