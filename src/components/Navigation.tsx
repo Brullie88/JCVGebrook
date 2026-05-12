@@ -66,7 +66,7 @@ export default function Navigation({ activeSection, onNavigate }: Props) {
             onClick={() => onNavigate("join")}
             className="bg-carnaval-red hover:bg-carnaval-bordeaux text-carnaval-cream px-6 py-2 rounded-full font-display text-lg tracking-wide shadow-lg hover:shadow-carnaval-red/20 transition-all active:scale-95"
           >
-            WORD LID
+            Word lid
           </button>
         </div>
 
@@ -107,7 +107,7 @@ export default function Navigation({ activeSection, onNavigate }: Props) {
               }}
               className="mt-4 bg-carnaval-red text-carnaval-cream px-10 py-4 rounded-full font-display text-2xl tracking-widest shadow-2xl"
             >
-              WORD LID
+              Word lid
             </button>
             <div className="flex gap-8 mt-4">
               <a href={CONTACT_INFO.facebook} target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-white/5 text-carnaval-cream hover:bg-carnaval-red transition-all">

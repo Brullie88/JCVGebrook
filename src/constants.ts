@@ -10,7 +10,7 @@ export const NAVIGATION = [
   { name: "Jeugdraad", id: "council" },
   { name: "Agenda", id: "agenda" },
   { name: "Socials", id: "socials" },
-  { name: "Word Lid", id: "join" },
+  { name: "Word lid", id: "join" },
   { name: "Sponsoren", id: "sponsors" },
   { name: "Contact", id: "contact" },
 ];
@@ -29,10 +29,10 @@ export const HIGHLIGHTS = [
     cta: "Wie zijn wij?",
   },
   {
-    title: "Lid worden",
+    title: "Word lid",
     description: "Bouw mee aan de toekomst van Gebrook.",
     icon: "UserPlus",
-    cta: "Schrijf je in",
+    cta: "Word lid",
   },
 ];
 

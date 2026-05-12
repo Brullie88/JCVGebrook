@@ -95,7 +95,7 @@ export default function App() {
                       </p>
                       <button 
                         onClick={() => {
-                          const targetId = item.title === "Lid worden" ? "join" : 
+                          const targetId = item.title === "Word lid" ? "join" : 
                                           item.title === "Jeugdraad" ? "council" : "agenda";
                           handleNavigate(targetId);
                         }}
