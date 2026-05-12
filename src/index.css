@@ -36,6 +36,12 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-wider;
   }
+
+  img {
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
 }
 
 .glass-card {

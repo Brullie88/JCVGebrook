@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Navigation from "./components/Navigation";
 import Hero from "./components/sections/Hero";
@@ -14,6 +14,18 @@ import { ArrowRight, Star } from "lucide-react";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState("home");
+
+  useEffect(() => {
+    const handleContextMenu = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === "IMG" || target.closest("img")) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener("contextmenu", handleContextMenu);
+    return () => document.removeEventListener("contextmenu", handleContextMenu);
+  }, []);
 
   const handleNavigate = (id: string) => {
     // These IDs are all sections on the home page
