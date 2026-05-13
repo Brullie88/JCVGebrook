@@ -36,11 +36,11 @@ export default function YouthRoyals() {
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-carnaval-red/50 via-carnaval-yellow/50 to-carnaval-green/50 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
             <div className="relative glass-card overflow-hidden rounded-[2rem]">
-              <div className="relative h-[500px]">
+              <div className="relative h-[650px]">
                 <img
                   src="/prins_beau.png"
                   alt="Jeugdprins Beau 1e"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-carnaval-charcoal/90 via-transparent to-transparent"></div>
                 

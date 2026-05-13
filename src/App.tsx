@@ -9,6 +9,7 @@ import JoinUs from "./components/sections/JoinUs";
 import SponsorsSection from "./components/sections/SponsorsSection";
 import SocialWall from "./components/sections/SocialWall";
 import Footer from "./components/Footer";
+import CountdownTimer from "./components/CountdownTimer";
 import { NEWS_FLASH, HIGHLIGHTS } from "./constants";
 import { ArrowRight, Star } from "lucide-react";
 
@@ -82,8 +83,8 @@ export default function App() {
 
               {/* Highlight Cards */}
               <section id="highlights" className="py-24 px-6 relative z-10 -mt-20">
-                <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-                  {HIGHLIGHTS.map((item, i) => (
+                <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
+                  {HIGHLIGHTS.slice(0, 2).map((item, i) => (
                     <motion.div
                       key={i}
                       initial={{ opacity: 0, y: 30 }}
@@ -93,17 +94,16 @@ export default function App() {
                       className="glass-card p-10 hover:bg-white/10 transition-all group hover:-translate-y-2"
                     >
                       <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform animate-float ${
-                        i % 3 === 0 ? "bg-carnaval-red/20 text-carnaval-red" : 
-                        i % 3 === 1 ? "bg-carnaval-yellow/20 text-carnaval-yellow" : 
-                        "bg-carnaval-green/20 text-carnaval-green"
+                        i % 2 === 0 ? "bg-carnaval-red/20 text-carnaval-red" : 
+                        "bg-carnaval-yellow/20 text-carnaval-yellow"
                       }`}>
                         <Star size={32} />
                       </div>
                       <h3 className="text-3xl mb-4 uppercase text-carnaval-charcoal">
-                        {i === 2 ? "1x11 Jubileum" : item.title}
+                        {item.title}
                       </h3>
                       <p className="text-carnaval-charcoal/60 font-accent mb-8 leading-relaxed">
-                        {i === 2 ? "Koop nu je loten voor de grote jubileumloterij!" : item.description}
+                        {item.description}
                       </p>
                       <button 
                         onClick={() => {
@@ -112,12 +112,11 @@ export default function App() {
                           handleNavigate(targetId);
                         }}
                         className={`flex items-center gap-2 font-display text-lg tracking-widest group ${
-                          i % 3 === 0 ? "text-carnaval-red" : 
-                          i % 3 === 1 ? "text-carnaval-yellow" : 
-                          "text-carnaval-green"
+                          i % 2 === 0 ? "text-carnaval-red" : 
+                          "text-carnaval-yellow"
                         }`}
                       >
-                        {i === 2 ? "LOTEN KOPEN" : item.cta} <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                        {item.cta} <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                       </button>
                     </motion.div>
                   ))}
@@ -150,12 +149,26 @@ export default function App() {
                           <img src={news.image} alt={news.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform" />
                         </div>
                         <div className="space-y-3">
-                          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-white bg-carnaval-red px-3 py-1 rounded-full shadow-lg shadow-carnaval-red/20">{news.category}</span>
+                          <div className="flex flex-col gap-2">
+                            {news.targetDate && <CountdownTimer targetDate={news.targetDate} />}
+                            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-white bg-carnaval-red px-3 py-1 rounded-full shadow-lg shadow-carnaval-red/20 w-fit">{news.category}</span>
+                          </div>
                           <h4 className="text-2xl text-carnaval-charcoal">{news.title}</h4>
                           <p className="text-sm text-carnaval-charcoal/60 font-accent line-clamp-2">{news.summary}</p>
-                          <button className="flex items-center gap-2 text-carnaval-red text-sm font-bold uppercase tracking-widest group">
-                            LEES MEER <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                          </button>
+                          {news.url ? (
+                            <a 
+                              href={news.url} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 text-carnaval-red text-sm font-bold uppercase tracking-widest group inline-flex"
+                            >
+                              LEES MEER <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                            </a>
+                          ) : (
+                            <button className="flex items-center gap-2 text-carnaval-red text-sm font-bold uppercase tracking-widest group">
+                              LEES MEER <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                            </button>
+                          )}
                         </div>
                       </motion.div>
                     ))}

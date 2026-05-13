@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Facebook } from "lucide-react";
+import { Menu, X, Facebook, Youtube } from "lucide-react";
 import { NAVIGATION, CONTACT_INFO } from "../constants";
 
 interface Props {
@@ -61,6 +61,9 @@ export default function Navigation({ activeSection, onNavigate }: Props) {
             <a href={CONTACT_INFO.facebook} target="_blank" rel="noopener noreferrer" className={`transition-colors ${isScrolled ? "text-carnaval-charcoal" : "text-carnaval-cream"} hover:text-carnaval-yellow`}>
               <Facebook size={18} />
             </a>
+            <a href={CONTACT_INFO.youtube} target="_blank" rel="noopener noreferrer" className={`transition-colors ${isScrolled ? "text-carnaval-charcoal" : "text-carnaval-cream"} hover:text-carnaval-yellow`}>
+              <Youtube size={18} />
+            </a>
           </div>
 
           <button
@@ -113,6 +116,9 @@ export default function Navigation({ activeSection, onNavigate }: Props) {
             <div className="flex gap-8 mt-4">
               <a href={CONTACT_INFO.facebook} target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-carnaval-charcoal/5 text-carnaval-charcoal hover:bg-carnaval-red hover:text-carnaval-cream transition-all">
                 <Facebook size={32} />
+              </a>
+              <a href={CONTACT_INFO.youtube} target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-carnaval-charcoal/5 text-carnaval-charcoal hover:bg-carnaval-red hover:text-carnaval-cream transition-all">
+                <Youtube size={32} />
               </a>
             </div>
           </motion.div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import { Facebook, Mail, MapPin, Phone, Heart } from "lucide-react";
+import { Facebook, Mail, MapPin, Phone, Heart, Youtube } from "lucide-react";
 import { CONTACT_INFO, NAVIGATION } from "../constants";
 import { useForm, ValidationError } from "@formspree/react";
 import LegalModal from "./LegalModal";
@@ -99,6 +99,14 @@ export default function Footer({ onNavigate }: Props) {
                 className="p-4 rounded-full bg-carnaval-charcoal/5 text-carnaval-charcoal hover:bg-carnaval-red hover:text-white transition-all shadow-lg hover:shadow-carnaval-red/20 group"
               >
                 <Facebook size={24} className="group-hover:scale-110 transition-transform" />
+              </a>
+              <a 
+                href={CONTACT_INFO.youtube} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-4 rounded-full bg-carnaval-charcoal/5 text-carnaval-charcoal hover:bg-carnaval-red hover:text-white transition-all shadow-lg hover:shadow-carnaval-red/20 group"
+              >
+                <Youtube size={24} className="group-hover:scale-110 transition-transform" />
               </a>
             </div>
           </div>
