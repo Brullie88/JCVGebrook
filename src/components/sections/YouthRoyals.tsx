@@ -4,7 +4,7 @@ import { YOUTH_ROYALS } from "../../constants";
 
 export default function YouthRoyals() {
   return (
-    <section id="council" className="py-24 px-6 bg-carnaval-charcoal/50 relative overflow-hidden">
+    <section id="council" className="py-24 px-6 bg-carnaval-charcoal/5 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-carnaval-yellow/5 blur-[120px] rounded-full"></div>
       
@@ -21,7 +21,7 @@ export default function YouthRoyals() {
           <h2 className="text-5xl md:text-7xl mb-4 uppercase">
             Onze <span className="text-carnaval-green">Heersers</span>
           </h2>
-          <p className="text-carnaval-cream/60 max-w-2xl mx-auto font-accent">
+          <p className="text-carnaval-charcoal/60 max-w-2xl mx-auto font-accent">
             Ontmoet het stralende middelpunt van JCV Gebrook. Onze Jeugdprins, Prinses en hun trouwe adjudanten.
           </p>
         </div>
@@ -42,9 +42,9 @@ export default function YouthRoyals() {
                   alt="Jeugdprins Beau 1e"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-carnaval-charcoal via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-carnaval-charcoal/90 via-transparent to-transparent"></div>
                 
-                <div className="absolute bottom-8 left-8 right-8">
+                <div className="absolute bottom-8 left-8 right-8 text-carnaval-cream">
                   <div className="flex items-center gap-2 text-carnaval-yellow mb-2">
                     <Star size={16} fill="currentColor" />
                     <span className="text-xs font-bold tracking-widest uppercase">{YOUTH_ROYALS.title}</span>
@@ -52,7 +52,7 @@ export default function YouthRoyals() {
                   <h3 className="text-4xl md:text-5xl mb-4">
                     {YOUTH_ROYALS.name}
                   </h3>
-                  <p className="text-carnaval-cream/80 max-w-md font-accent italic">
+                  <p className="text-white/80 max-w-md font-accent italic">
                     "{YOUTH_ROYALS.description}"
                   </p>
                   <div className="mt-4 flex gap-4 text-[10px] uppercase tracking-widest text-carnaval-green font-bold">
@@ -74,20 +74,20 @@ export default function YouthRoyals() {
               className="glass-card p-8 group hover:bg-white/10 transition-colors"
             >
               <div className="flex items-start gap-6">
-                <div className="w-16 h-16 rounded-xl bg-carnaval-red/20 text-carnaval-red flex items-center justify-center shrink-0">
+                <div className="w-16 h-16 rounded-xl bg-carnaval-red text-white flex items-center justify-center shrink-0 shadow-lg shadow-carnaval-red/20">
                   <ShieldCheck size={32} />
                 </div>
                 <div>
-                  <h4 className="text-2xl mb-2 text-carnaval-yellow">Gevolg</h4>
+                  <h4 className="text-2xl mb-2 text-carnaval-red">Gevolg</h4>
                   <div className="flex flex-wrap gap-3">
-                    <span className="px-4 py-1 rounded-full bg-white/5 border border-white/10 text-sm font-medium">
+                    <span className="px-4 py-1 rounded-full bg-carnaval-charcoal/5 border border-carnaval-charcoal/10 text-sm font-medium">
                       Raad van Elf
                     </span>
-                    <span className="px-4 py-1 rounded-full bg-white/5 border border-white/10 text-sm font-medium">
+                    <span className="px-4 py-1 rounded-full bg-carnaval-charcoal/5 border border-carnaval-charcoal/10 text-sm font-medium">
                       Dansgarde
                     </span>
                   </div>
-                  <p className="mt-4 text-carnaval-cream/60 font-accent text-sm leading-relaxed">
+                  <p className="mt-4 text-carnaval-charcoal/60 font-accent text-sm leading-relaxed">
                     Samen met de Raad van Elf trekt Jeugdprins Beau 1e door het Gebrookser land.
                   </p>
                 </div>
@@ -114,7 +114,7 @@ export default function YouthRoyals() {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full py-4 rounded-xl border border-carnaval-yellow text-carnaval-yellow font-display text-xl tracking-widest hover:bg-carnaval-yellow hover:text-carnaval-charcoal transition-all"
+              className="w-full py-4 rounded-xl border border-carnaval-red text-carnaval-red font-display text-xl tracking-widest hover:bg-carnaval-red hover:text-white transition-all shadow-lg hover:shadow-carnaval-red/20"
             >
               BEKIJK DE VOLLEDIGE RAAD
             </motion.button>

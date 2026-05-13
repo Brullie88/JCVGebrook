@@ -64,7 +64,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-carnaval-charcoal selection:bg-carnaval-yellow selection:text-carnaval-charcoal">
+    <div className="min-h-screen bg-carnaval-cream selection:bg-carnaval-yellow selection:text-carnaval-charcoal">
       <Navigation activeSection={activeTab} onNavigate={handleNavigate} />
 
       <main>
@@ -99,10 +99,10 @@ export default function App() {
                       }`}>
                         <Star size={32} />
                       </div>
-                      <h3 className="text-3xl mb-4 uppercase">
+                      <h3 className="text-3xl mb-4 uppercase text-carnaval-charcoal">
                         {i === 2 ? "1x11 Jubileum" : item.title}
                       </h3>
-                      <p className="text-carnaval-cream/60 font-accent mb-8 leading-relaxed">
+                      <p className="text-carnaval-charcoal/60 font-accent mb-8 leading-relaxed">
                         {i === 2 ? "Koop nu je loten voor de grote jubileumloterij!" : item.description}
                       </p>
                       <button 
@@ -144,16 +144,16 @@ export default function App() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="group flex flex-col md:flex-row gap-8 items-center glass-card p-6 border-white/5 hover:border-carnaval-red/30 transition-all"
+                        className="group flex flex-col md:flex-row gap-8 items-center glass-card p-6 border-carnaval-charcoal/5 hover:border-carnaval-red/30 transition-all"
                       >
                         <div className="w-48 h-48 rounded-2xl overflow-hidden shrink-0">
                           <img src={news.image} alt={news.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform" />
                         </div>
                         <div className="space-y-3">
-                          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-carnaval-red bg-carnaval-red/10 px-3 py-1 rounded-full">{news.category}</span>
-                          <h4 className="text-2xl">{news.title}</h4>
-                          <p className="text-sm text-carnaval-cream/50 font-accent line-clamp-2">{news.summary}</p>
-                          <button className="flex items-center gap-2 text-carnaval-yellow text-sm font-bold uppercase tracking-widest group">
+                          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-white bg-carnaval-red px-3 py-1 rounded-full shadow-lg shadow-carnaval-red/20">{news.category}</span>
+                          <h4 className="text-2xl text-carnaval-charcoal">{news.title}</h4>
+                          <p className="text-sm text-carnaval-charcoal/60 font-accent line-clamp-2">{news.summary}</p>
+                          <button className="flex items-center gap-2 text-carnaval-red text-sm font-bold uppercase tracking-widest group">
                             LEES MEER <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                           </button>
                         </div>
@@ -197,7 +197,7 @@ export default function App() {
               className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-32"
             >
               <h2 className="text-7xl mb-8 uppercase">Aan de <span className="text-carnaval-yellow">Weg</span> Timmeren</h2>
-              <p className="text-xl text-carnaval-cream/60 max-w-xl font-accent mb-12">
+              <p className="text-xl text-carnaval-charcoal/60 max-w-xl font-accent mb-12">
                 Deze pagina wordt op dit moment klaargemaakt voor de optocht. Kom snel terug voor een premium ervaring!
               </p>
               <button 

@@ -7,7 +7,7 @@ export default function JoinUs() {
 
   if (state.succeeded) {
     return (
-      <section id="join" className="py-24 px-6 bg-carnaval-charcoal relative overflow-hidden">
+      <section id="join" className="py-24 px-6 relative overflow-hidden min-h-[600px] flex items-center justify-center">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -16,7 +16,7 @@ export default function JoinUs() {
           >
             <CheckCircle2 size={64} className="text-carnaval-green mx-auto mb-6" />
             <h2 className="text-4xl uppercase mb-4">Bedankt voor je aanmelding!</h2>
-            <p className="text-carnaval-cream/70 font-accent max-w-md mx-auto">
+            <p className="text-carnaval-charcoal/70 font-accent max-w-md mx-auto">
               We hebben je bericht ontvangen en nemen binnen 48 uur contact met je op.
             </p>
           </motion.div>
@@ -26,7 +26,7 @@ export default function JoinUs() {
   }
 
   return (
-    <section id="join" className="py-24 px-6 bg-carnaval-charcoal relative overflow-hidden">
+    <section id="join" className="py-24 px-6 relative overflow-hidden">
       {/* Dynamic Background */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-carnaval-red blur-[150px] rounded-full animate-float"></div>
@@ -47,7 +47,7 @@ export default function JoinUs() {
             BOUW MEE AAN <br />
             <span className="text-carnaval-red">HET FEEST</span>
           </h2>
-          <p className="text-xl text-carnaval-cream/70 mb-10 font-accent max-w-lg leading-relaxed">
+          <p className="text-xl text-carnaval-charcoal/70 mb-10 font-accent max-w-lg leading-relaxed">
             Nieuwe vrienden maken, op het podium staan en de Limburgse traditie doorgeven. Bij JCV Gebrook hoor je erbij!
           </p>
 
@@ -64,7 +64,7 @@ export default function JoinUs() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-center gap-4 text-carnaval-cream/90"
+                className="flex items-center gap-4 text-carnaval-charcoal/90"
               >
                 <div className="w-6 h-6 rounded-full bg-carnaval-green/20 text-carnaval-green flex items-center justify-center shrink-0">
                   <CheckCircle2 size={16} />
@@ -81,7 +81,7 @@ export default function JoinUs() {
               </div>
               <div>
                 <p className="text-sm font-bold uppercase tracking-widest">Wacht niet langer!</p>
-                <p className="text-xs text-carnaval-cream/60">Al meer dan 40 jongeren gingen je voor dit jaar.</p>
+                <p className="text-xs text-carnaval-charcoal/60">Al meer dan 40 jongeren gingen je voor dit jaar.</p>
               </div>
             </div>
           </div>
@@ -100,60 +100,60 @@ export default function JoinUs() {
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest text-carnaval-cream/50 ml-2">Voornaam</label>
+                  <label className="text-[10px] uppercase tracking-widest text-carnaval-charcoal/50 ml-2">Voornaam</label>
                   <input
                     type="text"
                     name="firstName"
                     placeholder="Milan"
                     required
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-carnaval-yellow transition-colors text-carnaval-cream"
+                    className="w-full bg-white/50 border border-carnaval-charcoal/10 rounded-2xl px-6 py-4 outline-none focus:border-carnaval-yellow transition-colors text-carnaval-charcoal placeholder:text-carnaval-charcoal/20"
                   />
                   <ValidationError prefix="Voornaam" field="firstName" errors={state.errors} className="text-xs text-carnaval-red mt-1" />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest text-carnaval-cream/50 ml-2">Achternaam</label>
+                  <label className="text-[10px] uppercase tracking-widest text-carnaval-charcoal/50 ml-2">Achternaam</label>
                   <input
                     type="text"
                     name="lastName"
                     placeholder="Janssen"
                     required
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-carnaval-yellow transition-colors text-carnaval-cream"
+                    className="w-full bg-white/50 border border-carnaval-charcoal/10 rounded-2xl px-6 py-4 outline-none focus:border-carnaval-yellow transition-colors text-carnaval-charcoal placeholder:text-carnaval-charcoal/20"
                   />
                   <ValidationError prefix="Achternaam" field="lastName" errors={state.errors} className="text-xs text-carnaval-red mt-1" />
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest text-carnaval-cream/50 ml-2">Email Ouder/Verzorger</label>
+                <label className="text-[10px] uppercase tracking-widest text-carnaval-charcoal/50 ml-2">Email Ouder/Verzorger</label>
                 <input
                   type="email"
                   name="email"
                   placeholder="ouder@voorbeeld.nl"
                   required
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-carnaval-yellow transition-colors text-carnaval-cream"
+                  className="w-full bg-white/50 border border-carnaval-charcoal/10 rounded-2xl px-6 py-4 outline-none focus:border-carnaval-yellow transition-colors text-carnaval-charcoal placeholder:text-carnaval-charcoal/20"
                 />
                 <ValidationError prefix="Email" field="email" errors={state.errors} className="text-xs text-carnaval-red mt-1" />
               </div>
               <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest text-carnaval-cream/50 ml-2">Leeftijd Jeugdlid</label>
+                <label className="text-[10px] uppercase tracking-widest text-carnaval-charcoal/50 ml-2">Leeftijd Jeugdlid</label>
                 <select 
                   name="age" 
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-carnaval-yellow transition-colors text-carnaval-cream appearance-none"
+                  className="w-full bg-white/50 border border-carnaval-charcoal/10 rounded-2xl px-6 py-4 outline-none focus:border-carnaval-yellow transition-colors text-carnaval-charcoal appearance-none"
                   required
                 >
-                  <option value="" className="bg-carnaval-charcoal">Selecteer leeftijd</option>
+                  <option value="" className="bg-white">Selecteer leeftijd</option>
                   {[...Array(12)].map((_, i) => (
-                    <option key={i} value={i+4} className="bg-carnaval-charcoal">{i+4} jaar</option>
+                    <option key={i} value={i+4} className="bg-white">{i+4} jaar</option>
                   ))}
                 </select>
                 <ValidationError prefix="Leeftijd" field="age" errors={state.errors} className="text-xs text-carnaval-red mt-1" />
               </div>
               <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest text-carnaval-cream/50 ml-2">Korte Motivatie (Optioneel)</label>
+                <label className="text-[10px] uppercase tracking-widest text-carnaval-charcoal/50 ml-2">Korte Motivatie (Optioneel)</label>
                 <textarea
                   name="message"
                   placeholder="Ik wil graag bij de Raad van 11!"
                   rows={3}
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-carnaval-yellow transition-colors text-carnaval-cream resize-none"
+                  className="w-full bg-white/50 border border-carnaval-charcoal/10 rounded-2xl px-6 py-4 outline-none focus:border-carnaval-yellow transition-colors text-carnaval-charcoal placeholder:text-carnaval-charcoal/20 resize-none"
                 ></textarea>
                 <ValidationError prefix="Bericht" field="message" errors={state.errors} className="text-xs text-carnaval-red mt-1" />
               </div>
@@ -165,7 +165,7 @@ export default function JoinUs() {
               >
                 {state.submitting ? "VERZENDEN..." : "WORD LID"}
               </button>
-              <p className="text-center text-[10px] text-carnaval-cream/40 uppercase tracking-widest pt-4">
+              <p className="text-center text-[10px] text-carnaval-charcoal/40 uppercase tracking-widest pt-4">
                 We nemen binnen 48 uur contact met je op
               </p>
             </form>

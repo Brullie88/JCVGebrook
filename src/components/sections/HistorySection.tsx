@@ -30,7 +30,7 @@ const MILESTONES = [
 
 export default function HistorySection() {
   return (
-    <section id="historie" className="py-24 px-6 relative overflow-hidden bg-carnaval-charcoal/40">
+    <section id="historie" className="py-24 px-6 relative overflow-hidden bg-carnaval-charcoal/5">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -41,7 +41,7 @@ export default function HistorySection() {
             <h2 className="text-5xl md:text-7xl uppercase mb-8">
               Ons <span className="text-carnaval-red">Verhaal</span>
             </h2>
-            <div className="space-y-6 text-carnaval-cream/70 font-accent leading-relaxed">
+            <div className="space-y-6 text-carnaval-charcoal/70 font-accent leading-relaxed">
               <p>
                 Enkele jaren geleden werd het idee geopperd om een jeugdcarnavalsvereniging in Hoensbroek op te richten. Dit werd in <span className="text-carnaval-yellow font-bold">2014</span> officieel toen JCV Gebrook werd opgericht door Diana en Ton Bodelier.
               </p>
@@ -62,7 +62,7 @@ export default function HistorySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass-card p-8 border-white/5 hover:border-carnaval-yellow/30 transition-all group"
+                className="glass-card p-8 border-carnaval-charcoal/5 hover:border-carnaval-yellow/30 transition-all group"
               >
                 <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 text-carnaval-yellow group-hover:scale-110 transition-transform">
                   {milestone.icon}
@@ -70,10 +70,10 @@ export default function HistorySection() {
                 <div className="text-xs font-bold text-carnaval-red tracking-widest uppercase mb-2">
                   {milestone.year}
                 </div>
-                <h3 className="text-xl font-display mb-4 text-carnaval-cream group-hover:text-carnaval-yellow transition-colors">
+                <h3 className="text-xl font-display mb-4 text-carnaval-charcoal group-hover:text-carnaval-yellow transition-colors">
                   {milestone.title}
                 </h3>
-                <p className="text-sm text-carnaval-cream/50 font-accent">
+                <p className="text-sm text-carnaval-charcoal/50 font-accent">
                   {milestone.description}
                 </p>
               </motion.div>
@@ -92,10 +92,10 @@ export default function HistorySection() {
             alt="JCV Gebrook Groepsfoto" 
             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-carnaval-charcoal/80 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-carnaval-cream/80 via-transparent to-transparent"></div>
           <div className="absolute bottom-8 left-8">
-            <p className="text-carnaval-yellow font-display text-2xl tracking-widest uppercase">Traditie in Beeld</p>
-            <p className="text-carnaval-cream/60 font-accent">De Jeugdraad van JCV Gebrook 2026-2027</p>
+            <p className="text-carnaval-red font-display text-2xl tracking-widest uppercase">Traditie in Beeld</p>
+            <p className="text-carnaval-charcoal/60 font-accent">De Jeugdraad van JCV Gebrook 2026-2027</p>
           </div>
         </motion.div>
 

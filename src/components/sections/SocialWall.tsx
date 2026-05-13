@@ -8,7 +8,8 @@ const SOCIAL_POSTS = [
     image: "/prins_auto.png",
     text: "De nieuwe auto voor Jeugdprins Beau 1e is klaar! Gefeliciteerd Beau! 🚗🎉 #jcvgebrook #carnaval",
     likes: 245,
-    date: "1d geleden"
+    date: "1d geleden",
+    position: "object-center"
   },
   {
     type: "tiktok",
@@ -16,14 +17,16 @@ const SOCIAL_POSTS = [
     text: "Onze volledige Jeugdraad in actie! Een geweldige club die de traditie van Gebrook hoog houdt. 💃🕺",
     likes: "3.1k",
     date: "2 dagen geleden",
-    isVideo: true
+    isVideo: true,
+    position: "object-top"
   },
   {
     type: "facebook",
     image: "/begeleiding.png",
     text: "Samen maken we de carnaval groot in Hoensbroek. Bedankt aan alle begeleiders en vrijwilligers! ❤️💛💚",
     likes: 78,
-    date: "3 dagen geleden"
+    date: "3 dagen geleden",
+    position: "object-[center_top]"
   }
 ];
 
@@ -39,7 +42,7 @@ export default function SocialWall() {
             <h2 className="text-5xl md:text-7xl uppercase mb-4">
               Onze <span className="text-carnaval-red">Socials</span>
             </h2>
-            <p className="text-carnaval-cream/60 max-w-xl font-accent">
+            <p className="text-carnaval-charcoal/60 max-w-xl font-accent">
               Volg ons voor de laatste updates, backstage beelden en de leukste carnavalsmomenten uit Gebrook!
             </p>
           </div>
@@ -48,14 +51,14 @@ export default function SocialWall() {
               href={CONTACT_INFO.facebook} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-full glass-card border-carnaval-red/30 text-carnaval-cream hover:bg-carnaval-red transition-all flex items-center gap-2 font-display tracking-widest text-sm"
+              className="px-6 py-3 rounded-full glass-card border-carnaval-red/30 text-carnaval-charcoal hover:bg-carnaval-red hover:text-white transition-all flex items-center gap-2 font-display tracking-widest text-sm"
             >
               <Facebook size={18} /> FACEBOOK
             </a>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SOCIAL_POSTS.map((post, i) => (
             <motion.div
               key={i}
@@ -63,15 +66,15 @@ export default function SocialWall() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass-card overflow-hidden group border-white/5 hover:border-white/20 transition-all flex flex-col h-full"
+              className="glass-card overflow-hidden group border-carnaval-charcoal/5 hover:border-carnaval-charcoal/20 transition-all flex flex-col h-full"
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-[450px] overflow-hidden">
                 <img 
                   src={post.image} 
                   alt="Social post" 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className={`w-full h-full object-cover ${post.position} group-hover:scale-110 transition-transform duration-700`}
                 />
-                <div className="absolute top-4 right-4 p-2 bg-black/40 backdrop-blur-md rounded-lg text-white">
+                <div className="absolute top-4 right-4 p-2 bg-carnaval-red text-white rounded-lg shadow-lg">
                   {post.type === "facebook" && <Facebook size={18} />}
                   {post.type === "tiktok" && <MessageCircle size={18} />}
                 </div>
@@ -85,7 +88,7 @@ export default function SocialWall() {
               </div>
               
               <div className="p-6 flex flex-col flex-1">
-                <p className="text-sm text-carnaval-cream/80 font-accent line-clamp-3 mb-6 flex-1">
+                <p className="text-sm text-carnaval-charcoal/80 font-accent line-clamp-3 mb-6 flex-1">
                   {post.text}
                 </p>
                 
@@ -94,9 +97,9 @@ export default function SocialWall() {
                     <span className="flex items-center gap-1 text-carnaval-red">
                       <Heart size={14} fill="currentColor" /> {post.likes}
                     </span>
-                    <span className="text-carnaval-cream/40">{post.date}</span>
+                    <span className="text-carnaval-charcoal/40">{post.date}</span>
                   </div>
-                  <Share2 size={14} className="text-carnaval-cream/40" />
+                  <Share2 size={14} className="text-carnaval-charcoal/40" />
                 </div>
               </div>
             </motion.div>
@@ -110,7 +113,7 @@ export default function SocialWall() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <p className="text-carnaval-cream/40 font-display tracking-[0.3em] uppercase text-sm mb-6">
+          <p className="text-carnaval-charcoal/40 font-display tracking-[0.3em] uppercase text-sm mb-6">
             Blijf verbonden met de jeugd van Gebrook
           </p>
           <div className="flex flex-wrap justify-center gap-8 opacity-40 hover:opacity-100 transition-opacity">

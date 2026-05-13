@@ -8,11 +8,11 @@ export default function SponsorsSection() {
   const regulier = SPONSORS.filter(s => s.tier === "Regulier");
 
   return (
-    <section id="sponsors" className="py-24 px-6 bg-carnaval-charcoal/30">
+    <section id="sponsors" className="py-24 px-6 bg-carnaval-charcoal/5">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-7xl uppercase mb-6">Onze <span className="text-carnaval-yellow">Sponsoren</span></h2>
-          <p className="text-carnaval-cream/60 max-w-3xl mx-auto font-accent leading-relaxed">
+          <h2 className="text-5xl md:text-7xl uppercase mb-6">Onze <span className="text-carnaval-red">Sponsoren</span></h2>
+          <p className="text-carnaval-charcoal/60 max-w-3xl mx-auto font-accent leading-relaxed">
             We bedanken onderstaande sponsoren voor hun steun aan JCV Gebrook 2026-2027. <br />
             Indien van toepassing kunt u op de naam van de sponsor klikken en wordt u doorverwezen naar zijn/haar website of Facebookpagina.
           </p>
@@ -34,7 +34,7 @@ export default function SponsorsSection() {
                 whileHover={{ y: -5, scale: 1.02 }}
                 className={`glass-card p-10 flex items-center justify-center text-center border-carnaval-red/20 hover:border-carnaval-red/50 transition-all group ${s.url ? 'cursor-pointer' : 'cursor-default'}`}
               >
-                <span className="text-3xl font-display text-carnaval-cream group-hover:text-carnaval-red transition-colors">
+                <span className="text-3xl font-display text-carnaval-charcoal group-hover:text-carnaval-red transition-colors">
                   {s.name}
                 </span>
               </motion.a>
@@ -58,7 +58,7 @@ export default function SponsorsSection() {
                 whileHover={{ y: -5, scale: 1.01 }}
                 className={`glass-card p-8 flex items-center justify-center text-center border-carnaval-yellow/20 hover:border-carnaval-yellow/50 transition-all group ${s.url ? 'cursor-pointer' : 'cursor-default'}`}
               >
-                <span className="text-2xl font-display text-carnaval-cream group-hover:text-carnaval-yellow transition-colors">
+                <span className="text-2xl font-display text-carnaval-charcoal group-hover:text-carnaval-yellow transition-colors">
                   {s.name}
                 </span>
               </motion.a>
@@ -80,9 +80,9 @@ export default function SponsorsSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
-                className={`glass-card p-6 flex items-center justify-center text-center border-white/5 hover:border-carnaval-green/50 transition-all group ${s.url ? 'cursor-pointer' : 'cursor-default'}`}
+                className={`glass-card p-6 flex items-center justify-center text-center border-carnaval-charcoal/5 hover:border-carnaval-green/50 transition-all group ${s.url ? 'cursor-pointer' : 'cursor-default'}`}
               >
-                <span className="text-lg font-display text-carnaval-cream/60 group-hover:text-carnaval-green transition-colors">
+                <span className="text-lg font-display text-carnaval-charcoal/60 group-hover:text-carnaval-green transition-colors">
                   {s.name}
                 </span>
               </motion.a>
@@ -105,9 +105,9 @@ export default function SponsorsSection() {
             <div>
               <h2 className="text-5xl md:text-6xl uppercase mb-8 leading-tight">
                 Word <br />
-                <span className="text-carnaval-yellow">Sponsor!</span>
+                <span className="text-carnaval-red">Sponsor!</span>
               </h2>
-              <p className="text-xl text-carnaval-cream/70 font-accent mb-10 leading-relaxed">
+              <p className="text-xl text-carnaval-charcoal/70 font-accent mb-10 leading-relaxed">
                 Draag bij aan de mooiste jeugdtraditie van Hoensbroek en breng uw bedrijf onder de aandacht bij duizenden carnavalsvierders. We hebben pakketten op maat voor elk bedrijf.
               </p>
               
@@ -118,7 +118,7 @@ export default function SponsorsSection() {
                   "Logo-uiting tijdens diverse evenementen",
                   "Steun aan de jeugd van Hoensbroek"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-4 text-carnaval-cream/80">
+                  <li key={i} className="flex items-start gap-4 text-carnaval-charcoal/80">
                     <div className="w-6 h-6 rounded-full bg-carnaval-green/20 flex items-center justify-center shrink-0 mt-1">
                       <div className="w-2 h-2 rounded-full bg-carnaval-green"></div>
                     </div>
@@ -128,7 +128,7 @@ export default function SponsorsSection() {
               </ul>
             </div>
 
-            <div className="glass-card p-8 md:p-10 border-white/10 bg-white/5">
+            <div className="glass-card p-8 md:p-10 border-carnaval-charcoal/10 bg-white/60">
               <h3 className="text-2xl uppercase mb-8">Neem contact op</h3>
               <SponsorForm />
             </div>
@@ -159,46 +159,46 @@ function SponsorForm() {
   return (
     <form className="space-y-6" onSubmit={handleSubmit}>
       <div>
-        <label className="block text-xs font-bold uppercase tracking-widest text-carnaval-cream/40 mb-2">Bedrijfsnaam</label>
+        <label className="block text-xs font-bold uppercase tracking-widest text-carnaval-charcoal/40 mb-2">Bedrijfsnaam</label>
         <input 
           type="text" 
           name="companyName"
           placeholder="Uw bedrijfsnaam"
           required
-          className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:border-carnaval-yellow/50 outline-none transition-all placeholder:text-white/10"
+          className="w-full bg-white/50 border border-carnaval-charcoal/10 rounded-xl px-6 py-4 focus:border-carnaval-yellow/50 outline-none transition-all placeholder:text-carnaval-charcoal/20"
         />
         <ValidationError prefix="Bedrijfsnaam" field="companyName" errors={state.errors} className="text-xs text-carnaval-red mt-1" />
       </div>
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-xs font-bold uppercase tracking-widest text-carnaval-cream/40 mb-2">E-mailadres</label>
+          <label className="block text-xs font-bold uppercase tracking-widest text-carnaval-charcoal/40 mb-2">E-mailadres</label>
           <input 
             type="email" 
             name="email"
             placeholder="naam@bedrijf.nl"
             required
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:border-carnaval-yellow/50 outline-none transition-all placeholder:text-white/10"
+            className="w-full bg-white/50 border border-carnaval-charcoal/10 rounded-xl px-6 py-4 focus:border-carnaval-yellow/50 outline-none transition-all placeholder:text-carnaval-charcoal/20"
           />
           <ValidationError prefix="Email" field="email" errors={state.errors} className="text-xs text-carnaval-red mt-1" />
         </div>
         <div>
-          <label className="block text-xs font-bold uppercase tracking-widest text-carnaval-cream/40 mb-2">Telefoon</label>
+          <label className="block text-xs font-bold uppercase tracking-widest text-carnaval-charcoal/40 mb-2">Telefoon</label>
           <input 
             type="tel" 
             name="phone"
             placeholder="06-12345678"
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:border-carnaval-yellow/50 outline-none transition-all placeholder:text-white/10"
+            className="w-full bg-white/50 border border-carnaval-charcoal/10 rounded-xl px-6 py-4 focus:border-carnaval-yellow/50 outline-none transition-all placeholder:text-carnaval-charcoal/20"
           />
           <ValidationError prefix="Telefoon" field="phone" errors={state.errors} className="text-xs text-carnaval-red mt-1" />
         </div>
       </div>
       <div>
-        <label className="block text-xs font-bold uppercase tracking-widest text-carnaval-cream/40 mb-2">Bericht</label>
+        <label className="block text-xs font-bold uppercase tracking-widest text-carnaval-charcoal/40 mb-2">Bericht</label>
         <textarea 
           name="message"
           rows={4}
           placeholder="Ik heb interesse in..."
-          className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:border-carnaval-yellow/50 outline-none transition-all placeholder:text-white/10 resize-none"
+          className="w-full bg-white/50 border border-carnaval-charcoal/10 rounded-xl px-6 py-4 focus:border-carnaval-yellow/50 outline-none transition-all placeholder:text-carnaval-charcoal/20 resize-none"
         ></textarea>
         <ValidationError prefix="Bericht" field="message" errors={state.errors} className="text-xs text-carnaval-red mt-1" />
       </div>

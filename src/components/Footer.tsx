@@ -74,7 +74,7 @@ export default function Footer({ onNavigate }: Props) {
   const [activeModal, setActiveModal] = useState<"privacy" | "voorwaarden" | null>(null);
 
   return (
-    <footer id="contact" className="bg-carnaval-charcoal pt-24 pb-12 px-6 border-t border-white/5">
+    <footer id="contact" className="bg-carnaval-charcoal/5 pt-24 pb-12 px-6 border-t border-carnaval-charcoal/10">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-24">
           {/* Brand */}
@@ -88,7 +88,7 @@ export default function Footer({ onNavigate }: Props) {
               </div>
               <h2 className="text-2xl font-display tracking-wider">JCV GEBROOK</h2>
             </div>
-            <p className="text-carnaval-cream/50 font-accent text-sm leading-relaxed">
+            <p className="text-carnaval-charcoal/50 font-accent text-sm leading-relaxed">
               Al generaties lang hét gezicht van de jeugdcarnaval in Hoensbroek. Samen bouwen we aan tradities, vriendschap en onvergetelijke feesten.
             </p>
             <div className="flex gap-4">
@@ -96,7 +96,7 @@ export default function Footer({ onNavigate }: Props) {
                 href={CONTACT_INFO.facebook} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-4 rounded-full bg-white/5 hover:bg-carnaval-red hover:text-white transition-all shadow-lg hover:shadow-carnaval-red/20 group"
+                className="p-4 rounded-full bg-carnaval-charcoal/5 text-carnaval-charcoal hover:bg-carnaval-red hover:text-white transition-all shadow-lg hover:shadow-carnaval-red/20 group"
               >
                 <Facebook size={24} className="group-hover:scale-110 transition-transform" />
               </a>
@@ -111,7 +111,7 @@ export default function Footer({ onNavigate }: Props) {
                 <li key={item.id}>
                   <button 
                     onClick={() => onNavigate(item.id)}
-                    className="text-carnaval-cream/60 hover:text-carnaval-green transition-colors text-sm uppercase tracking-widest text-left"
+                    className="text-carnaval-charcoal/60 hover:text-carnaval-green transition-colors text-sm uppercase tracking-widest text-left"
                   >
                     {item.name}
                   </button>
@@ -124,15 +124,15 @@ export default function Footer({ onNavigate }: Props) {
           <div>
             <h4 className="text-carnaval-yellow font-display text-xl mb-8 tracking-widest uppercase">Contact</h4>
             <ul className="space-y-6">
-              <li className="flex items-center gap-4 text-carnaval-cream/60">
+              <li className="flex items-center gap-4 text-carnaval-charcoal/60">
                 <Mail size={18} className="text-carnaval-red" />
                 <span className="text-sm">{CONTACT_INFO.email}</span>
               </li>
-              <li className="flex items-center gap-4 text-carnaval-cream/60">
+              <li className="flex items-center gap-4 text-carnaval-charcoal/60">
                 <MapPin size={18} className="text-carnaval-red" />
                 <span className="text-sm">{CONTACT_INFO.location}</span>
               </li>
-              <li className="flex items-center gap-4 text-carnaval-cream/60">
+              <li className="flex items-center gap-4 text-carnaval-charcoal/60">
                 <Phone size={18} className="text-carnaval-red" />
                 <span className="text-sm">+31 (0) 45 123 4567</span>
               </li>
@@ -153,7 +153,7 @@ export default function Footer({ onNavigate }: Props) {
                   name="email"
                   required
                   placeholder="Je email adres"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3 outline-none focus:border-carnaval-yellow transition-colors text-sm"
+                  className="w-full bg-white/50 border border-carnaval-charcoal/10 rounded-xl px-5 py-3 outline-none focus:border-carnaval-yellow transition-colors text-sm text-carnaval-charcoal placeholder:text-carnaval-charcoal/20"
                 />
                 <ValidationError prefix="Email" field="email" errors={state.errors} className="text-[10px] text-carnaval-red ml-2" />
                 <button 
@@ -169,7 +169,7 @@ export default function Footer({ onNavigate }: Props) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] uppercase tracking-[0.2em] text-carnaval-cream/30">
+        <div className="pt-8 border-t border-carnaval-charcoal/10 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] uppercase tracking-[0.2em] text-carnaval-charcoal/30">
           <p>© 2024 JCV GEBROOK. Alle rechten voorbehouden.</p>
           <div className="flex items-center gap-2">
             Made with <Heart size={12} className="text-carnaval-red fill-carnaval-red" /> in Gebrook

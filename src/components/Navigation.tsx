@@ -24,7 +24,7 @@ export default function Navigation({ activeSection, onNavigate }: Props) {
     <>
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? "bg-carnaval-charcoal/90 backdrop-blur-lg py-3 shadow-2xl" : "bg-transparent py-4 sm:py-6"
+          isScrolled ? "bg-white/90 backdrop-blur-lg py-3 shadow-xl" : "bg-transparent py-4 sm:py-6"
         }`}
       >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -37,7 +37,7 @@ export default function Navigation({ activeSection, onNavigate }: Props) {
             <span className="text-carnaval-yellow font-display text-2xl">J</span>
           </div>
           <div className="hidden sm:block">
-            <h1 className="text-xl font-display leading-none text-carnaval-cream">JCV GEBROOK</h1>
+            <h1 className={`text-xl font-display leading-none transition-colors ${isScrolled ? "text-carnaval-charcoal" : "text-carnaval-cream"}`}>JCV GEBROOK</h1>
             <p className="text-[10px] tracking-widest text-carnaval-yellow uppercase">Vastelaovend Same</p>
           </div>
         </div>
@@ -48,16 +48,17 @@ export default function Navigation({ activeSection, onNavigate }: Props) {
             <button
               key={item.id}
               onClick={() => onNavigate(item.id)}
-              className={`text-sm font-medium tracking-wide uppercase transition-colors hover:text-carnaval-yellow ${
-                activeSection === item.id ? "text-carnaval-yellow" : "text-carnaval-cream"
+              className={`text-sm font-bold tracking-widest uppercase transition-colors hover:text-carnaval-red ${
+                activeSection === item.id ? "text-carnaval-red" : 
+                isScrolled ? "text-carnaval-charcoal" : "text-white"
               }`}
             >
               {item.name}
             </button>
           ))}
           
-          <div className="flex items-center gap-3 border-l border-white/10 pl-6 ml-2">
-            <a href={CONTACT_INFO.facebook} target="_blank" rel="noopener noreferrer" className="text-carnaval-cream hover:text-carnaval-yellow transition-colors">
+          <div className="flex items-center gap-3 border-l border-carnaval-charcoal/10 pl-6 ml-2">
+            <a href={CONTACT_INFO.facebook} target="_blank" rel="noopener noreferrer" className={`transition-colors ${isScrolled ? "text-carnaval-charcoal" : "text-carnaval-cream"} hover:text-carnaval-yellow`}>
               <Facebook size={18} />
             </a>
           </div>
@@ -72,7 +73,7 @@ export default function Navigation({ activeSection, onNavigate }: Props) {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-carnaval-cream p-2"
+          className={`md:hidden transition-colors p-2 ${isScrolled ? "text-carnaval-charcoal" : "text-carnaval-cream"}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
@@ -86,7 +87,7 @@ export default function Navigation({ activeSection, onNavigate }: Props) {
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            className="fixed inset-0 bg-carnaval-charcoal z-40 flex flex-col items-center justify-center gap-8 md:hidden"
+            className="fixed inset-0 bg-carnaval-cream z-40 flex flex-col items-center justify-center gap-8 md:hidden text-carnaval-charcoal"
           >
             {NAVIGATION.map((item) => (
               <button
@@ -110,7 +111,7 @@ export default function Navigation({ activeSection, onNavigate }: Props) {
               Word lid
             </button>
             <div className="flex gap-8 mt-4">
-              <a href={CONTACT_INFO.facebook} target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-white/5 text-carnaval-cream hover:bg-carnaval-red transition-all">
+              <a href={CONTACT_INFO.facebook} target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-carnaval-charcoal/5 text-carnaval-charcoal hover:bg-carnaval-red hover:text-carnaval-cream transition-all">
                 <Facebook size={32} />
               </a>
             </div>
