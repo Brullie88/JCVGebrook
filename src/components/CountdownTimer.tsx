@@ -9,8 +9,14 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
+      if (!targetDate) return null;
+
+      // Handle Safari and other browsers that prefer / over - and spaces over T
+      // We try the most common compatible format first
+      const normalizedDate = targetDate.replace(/-/g, '/').replace('T', ' ');
+      const target = new Date(normalizedDate).getTime() || new Date(targetDate).getTime();
+      
       const now = Date.now();
-      const target = new Date(targetDate).getTime();
       const difference = target - now;
 
       if (isNaN(target) || difference <= 0) return null;

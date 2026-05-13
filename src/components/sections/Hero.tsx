@@ -54,9 +54,13 @@ export default function Hero({ onNext }: Props) {
           <span className="inline-block px-4 py-1 rounded-full bg-carnaval-yellow/20 text-carnaval-yellow border border-carnaval-yellow/30 text-xs font-bold tracking-[0.3em] uppercase mb-6">
             Samen carnaval vieren — 1x11 Jaar Jubileum
           </span>
-          <h1 className="text-6xl md:text-9xl font-display leading-[0.9] mb-8 text-carnaval-charcoal drop-shadow-xl">
+          <h1 className="text-6xl md:text-9xl font-display leading-[0.9] mb-8 text-carnaval-charcoal drop-shadow-xl select-none">
             DE JEUGD VAN <br />
-            <span className="inline-flex tracking-tighter"><span className="text-carnaval-red">GEB</span><span className="text-carnaval-yellow">RO</span><span className="text-carnaval-green">OK</span></span>
+            <div className="flex justify-center -space-x-[0.02em]">
+              <span className="text-carnaval-red">GEB</span>
+              <span className="text-carnaval-yellow">RO</span>
+              <span className="text-carnaval-green">OK</span>
+            </div>
           </h1>
           <p className="text-lg md:text-2xl font-light text-carnaval-charcoal/80 mb-10 max-w-2xl mx-auto leading-relaxed font-accent">
             De gezelligste jeugdcarnavalsvereniging van Zuid-Limburg. Bouw jij mee aan de toekomst van onze traditie?
