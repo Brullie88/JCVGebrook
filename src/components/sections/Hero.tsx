@@ -56,9 +56,7 @@ export default function Hero({ onNext }: Props) {
           </span>
           <h1 className="text-6xl md:text-9xl font-display leading-[0.9] mb-8 text-carnaval-charcoal drop-shadow-xl">
             DE JEUGD VAN <br />
-            <span className="text-carnaval-red">GEB</span>
-            <span className="text-carnaval-yellow">RO</span>
-            <span className="text-carnaval-green">OK</span>
+            <span className="text-carnaval-red">GEB</span><span className="text-carnaval-yellow">RO</span><span className="text-carnaval-green">OK</span>
           </h1>
           <p className="text-lg md:text-2xl font-light text-carnaval-charcoal/80 mb-10 max-w-2xl mx-auto leading-relaxed font-accent">
             De gezelligste jeugdcarnavalsvereniging van Zuid-Limburg. Bouw jij mee aan de toekomst van onze traditie?
