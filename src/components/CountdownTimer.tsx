@@ -9,8 +9,11 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const difference = +new Date(targetDate) - +new Date();
-      if (difference <= 0) return null;
+      const now = Date.now();
+      const target = new Date(targetDate).getTime();
+      const difference = target - now;
+
+      if (isNaN(target) || difference <= 0) return null;
 
       return {
         hours: Math.floor(difference / (1000 * 60 * 60)),
