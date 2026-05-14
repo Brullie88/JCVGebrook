@@ -145,7 +145,14 @@ export default function Footer({ onNavigate }: Props) {
               </li>
               <li className="flex items-start gap-4 text-carnaval-charcoal/60">
                 <Phone size={18} className="text-carnaval-red shrink-0 mt-1" />
-                <span className="text-sm">{CONTACT_INFO.phone}</span>
+                <a 
+                  href={`https://wa.me/${CONTACT_INFO.phone.replace(/[^0-9]/g, "")}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sm hover:text-carnaval-red transition-colors"
+                >
+                  {CONTACT_INFO.phone}
+                </a>
               </li>
               <li className="pt-4 mt-4 border-t border-carnaval-charcoal/10 text-[11px] uppercase tracking-wider text-carnaval-charcoal/40 space-y-2">
                 <div className="flex justify-between">
