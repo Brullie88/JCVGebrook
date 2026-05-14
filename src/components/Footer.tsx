@@ -131,18 +131,31 @@ export default function Footer({ onNavigate }: Props) {
           {/* Contact */}
           <div>
             <h4 className="text-carnaval-yellow font-display text-xl mb-8 tracking-widest uppercase">Contact</h4>
-            <ul className="space-y-6">
-              <li className="flex items-center gap-4 text-carnaval-charcoal/60">
-                <Mail size={18} className="text-carnaval-red" />
+            <ul className="space-y-4">
+              <li className="flex items-start gap-4 text-carnaval-charcoal/60">
+                <Mail size={18} className="text-carnaval-red shrink-0 mt-1" />
                 <span className="text-sm">{CONTACT_INFO.email}</span>
               </li>
-              <li className="flex items-center gap-4 text-carnaval-charcoal/60">
-                <MapPin size={18} className="text-carnaval-red" />
-                <span className="text-sm">{CONTACT_INFO.location}</span>
+              <li className="flex items-start gap-4 text-carnaval-charcoal/60">
+                <MapPin size={18} className="text-carnaval-red shrink-0 mt-1" />
+                <div className="flex flex-col text-sm">
+                  <span>{CONTACT_INFO.address}</span>
+                  <span>{CONTACT_INFO.postcode} {CONTACT_INFO.city}</span>
+                </div>
               </li>
-              <li className="flex items-center gap-4 text-carnaval-charcoal/60">
-                <Phone size={18} className="text-carnaval-red" />
-                <span className="text-sm">+31 (0) 45 123 4567</span>
+              <li className="flex items-start gap-4 text-carnaval-charcoal/60">
+                <Phone size={18} className="text-carnaval-red shrink-0 mt-1" />
+                <span className="text-sm">{CONTACT_INFO.phone}</span>
+              </li>
+              <li className="pt-4 mt-4 border-t border-carnaval-charcoal/10 text-[11px] uppercase tracking-wider text-carnaval-charcoal/40 space-y-2">
+                <div className="flex justify-between">
+                  <span>KVK:</span>
+                  <span className="font-mono">{CONTACT_INFO.kvk}</span>
+                </div>
+                <div className="flex justify-between gap-4">
+                  <span>IBAN:</span>
+                  <span className="font-mono text-[10px]">{CONTACT_INFO.iban}</span>
+                </div>
               </li>
             </ul>
           </div>
@@ -178,7 +191,7 @@ export default function Footer({ onNavigate }: Props) {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-carnaval-charcoal/10 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] uppercase tracking-[0.2em] text-carnaval-charcoal/30">
-          <p>© 2024 JCV GEBROOK. Alle rechten voorbehouden.</p>
+          <p>© 2026 JCV GEBROOK. Alle rechten voorbehouden.</p>
           <div className="flex items-center gap-2">
             Made with <Heart size={12} className="text-carnaval-red fill-carnaval-red" /> in Gebrook
           </div>

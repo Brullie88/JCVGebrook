@@ -5,14 +5,13 @@ interface CountdownTimerProps {
 }
 
 export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
-  const [timeLeft, setTimeLeft] = useState<{ hours: number; minutes: number; seconds: number } | null>(null);
+  const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number; totalHours: number } | null>(null);
 
   useEffect(() => {
     const calculateTimeLeft = () => {
       if (!targetDate) return null;
 
       // Handle Safari and other browsers that prefer / over - and spaces over T
-      // We try the most common compatible format first
       const normalizedDate = targetDate.replace(/-/g, '/').replace('T', ' ');
       const target = new Date(normalizedDate).getTime() || new Date(targetDate).getTime();
       
@@ -22,7 +21,9 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
       if (isNaN(target) || difference <= 0) return null;
 
       return {
-        hours: Math.floor(difference / (1000 * 60 * 60)),
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        totalHours: Math.floor(difference / (1000 * 60 * 60)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((difference / 1000 / 60) % 60),
         seconds: Math.floor((difference / 1000) % 60),
       };
@@ -39,17 +40,26 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
 
   if (!timeLeft) return null;
 
+  const showSeconds = timeLeft.days < 8;
+
   return (
-    <div className="flex gap-2 text-carnaval-red font-mono text-xs font-bold">
-      <div className="bg-carnaval-red/10 px-2 py-1 rounded border border-carnaval-red/20 shadow-inner">
-        {timeLeft.hours.toString().padStart(2, '0')}u
+    <div className="flex gap-1.5 font-mono text-[10px] font-bold">
+      {!showSeconds && (
+        <div className="bg-carnaval-red text-white backdrop-blur-sm px-1.5 py-0.5 rounded-lg border border-white/20 shadow-lg">
+          {timeLeft.days}d
+        </div>
+      )}
+      <div className="bg-carnaval-yellow text-carnaval-charcoal backdrop-blur-sm px-1.5 py-0.5 rounded-lg border border-black/10 shadow-lg">
+        {(showSeconds ? timeLeft.totalHours : timeLeft.hours).toString().padStart(2, '0')}u
       </div>
-      <div className="bg-carnaval-red/10 px-2 py-1 rounded border border-carnaval-red/20 shadow-inner">
+      <div className="bg-green-600 text-white backdrop-blur-sm px-1.5 py-0.5 rounded-lg border border-white/20 shadow-lg">
         {timeLeft.minutes.toString().padStart(2, '0')}m
       </div>
-      <div className="bg-carnaval-red/10 px-2 py-1 rounded border border-carnaval-red/20 shadow-inner">
-        {timeLeft.seconds.toString().padStart(2, '0')}s
-      </div>
+      {showSeconds && (
+        <div className="bg-carnaval-red text-white backdrop-blur-sm px-1.5 py-0.5 rounded-lg border border-white/20 shadow-lg">
+          {timeLeft.seconds.toString().padStart(2, '0')}s
+        </div>
+      )}
     </div>
   );
 }

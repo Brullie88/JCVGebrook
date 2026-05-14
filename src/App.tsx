@@ -8,6 +8,7 @@ import HistorySection from "./components/sections/HistorySection";
 import JoinUs from "./components/sections/JoinUs";
 import SponsorsSection from "./components/sections/SponsorsSection";
 import SocialWall from "./components/sections/SocialWall";
+import Gallery from "./components/sections/Gallery";
 import Footer from "./components/Footer";
 import CountdownTimer from "./components/CountdownTimer";
 import { NEWS_FLASH, HIGHLIGHTS } from "./constants";
@@ -30,7 +31,7 @@ export default function App() {
 
   const handleNavigate = (id: string) => {
     // These IDs are all sections on the home page
-    const homeSections = ["home", "historie", "council", "agenda", "socials", "sponsors", "contact"];
+    const homeSections = ["home", "galerij", "historie", "council", "agenda", "socials", "sponsors", "contact"];
     
     if (homeSections.includes(id)) {
       setActiveTab("home");
@@ -125,6 +126,9 @@ export default function App() {
 
               {/* History Section */}
               <HistorySection />
+
+              {/* Gallery Section */}
+              <Gallery />
 
               {/* Royals Section */}
               <YouthRoyals />

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
 import { UPCOMING_EVENTS } from "../../constants";
+import CountdownTimer from "../CountdownTimer";
 
 export default function EventsSection() {
   const [showAll, setShowAll] = useState(false);
@@ -50,7 +51,12 @@ export default function EventsSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-carnaval-charcoal via-carnaval-charcoal/40 to-transparent"></div>
                 
-                <div className="absolute top-6 left-6">
+                <div className="absolute top-6 left-6 flex flex-col gap-2">
+                  {event.targetDate && (
+                    <div className="scale-90 origin-left">
+                      <CountdownTimer targetDate={event.targetDate} />
+                    </div>
+                  )}
                   <div className="bg-carnaval-red text-carnaval-cream px-4 py-2 rounded-2xl flex flex-col items-center justify-center min-w-[70px] shadow-lg border border-carnaval-charcoal/10 group-hover:bg-carnaval-yellow group-hover:text-carnaval-charcoal transition-colors">
                     <span className="text-2xl font-display leading-none">{event.date.split(' ')[0]}</span>
                     <span className="text-[10px] font-bold uppercase tracking-widest">{event.date.split(' ')[1]}</span>

@@ -9,13 +9,13 @@ export default function Hero({ onNext }: Props) {
   return (
     <section id="home" className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Cinematic Background Simulation */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
         <img
           src="/LogoJCV.png"
           alt="JCV Gebrook Logo"
-          className="w-full h-full object-cover scale-105"
+          className="w-full h-full object-contain p-4 md:p-12 opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-carnaval-charcoal/40 via-carnaval-charcoal/20 to-carnaval-cream"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-carnaval-charcoal/60 via-carnaval-charcoal/30 to-carnaval-cream"></div>
       </div>
 
       {/* Confetti Overlay Particle Simulation (CSS) */}
@@ -45,16 +45,17 @@ export default function Hero({ onNext }: Props) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl pt-24 md:pt-32">
+      <div className="relative z-10 text-center px-6 max-w-4xl pt-24 md:pt-32 flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="flex flex-col items-center"
         >
           <span className="inline-block px-4 py-1 rounded-full bg-carnaval-yellow/20 text-carnaval-yellow border border-carnaval-yellow/30 text-xs font-bold tracking-[0.3em] uppercase mb-6">
             Samen carnaval vieren — 1x11 Jaar Jubileum
           </span>
-          <h1 className="text-6xl md:text-9xl font-display leading-[0.9] mb-8 text-carnaval-charcoal drop-shadow-xl select-none">
+          <h1 className="text-6xl md:text-9xl font-display leading-[0.9] mb-8 text-carnaval-charcoal drop-shadow-xl select-none text-center">
             DE JEUGD VAN <br />
             <div className="flex justify-center -space-x-[0.02em]">
               <span className="text-carnaval-red">GEB</span>

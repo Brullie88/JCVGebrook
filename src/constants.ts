@@ -1,12 +1,19 @@
 export const CONTACT_INFO = {
   email: "info@jcvgebrook.nl",
+  address: "Hermanstraat 49",
+  postcode: "6433 DD",
+  city: "Hoensbroek",
   location: "Hoensbroek, Limburg",
+  phone: "+31 6 11 70 99 70",
+  kvk: "61559598",
+  iban: "NL86 INGB 0006 6086 34",
   facebook: "https://www.facebook.com/share/1Cku2KNPSY/",
   youtube: "https://www.youtube.com/@tonbodelier8697?sub_confirmation=1",
 };
 
 export const NAVIGATION = [
   { name: "Home", id: "home" },
+  { name: "Galerij", id: "galerij" },
   { name: "Geschiedenis", id: "historie" },
   { name: "Jeugdraad", id: "council" },
   { name: "Agenda", id: "agenda" },
@@ -60,6 +67,7 @@ export const UPCOMING_EVENTS = [
     location: "Parkstad",
     type: "Opening",
     image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800",
+    targetDate: "2026-11-10T14:11:00",
   },
   {
     date: "11 Nov",
@@ -67,6 +75,7 @@ export const UPCOMING_EVENTS = [
     location: "Hoensbroek",
     type: "Evenement",
     image: "/bvlk.png",
+    targetDate: "2026-11-11T14:11:00",
   },
   {
     date: "21 Nov",
@@ -74,6 +83,7 @@ export const UPCOMING_EVENTS = [
     location: "Amicitia",
     type: "Ceremonie",
     image: "/input_file_4.png",
+    targetDate: "2026-11-21T14:11:00",
   },
   {
     date: "03 Jan",
@@ -81,6 +91,7 @@ export const UPCOMING_EVENTS = [
     location: "Amicitia",
     type: "Receptie",
     image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800",
+    targetDate: "2027-01-03T14:11:00",
   },
   {
     date: "04 Feb",
@@ -88,6 +99,7 @@ export const UPCOMING_EVENTS = [
     location: "Hoensbroek",
     type: "Traditie",
     image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=800",
+    targetDate: "2027-02-04T14:11:00",
   },
   {
     date: "05 Feb",
@@ -95,6 +107,7 @@ export const UPCOMING_EVENTS = [
     location: "Scholen Gebrook",
     type: "Bezoek",
     image: "https://images.unsplash.com/photo-1523050335392-93851179ae09?auto=format&fit=crop&q=80&w=800",
+    targetDate: "2027-02-05T14:11:00",
   },
   {
     date: "06 Feb",
@@ -102,13 +115,15 @@ export const UPCOMING_EVENTS = [
     location: "Centrum Hoensbroek",
     type: "Optocht",
     image: "/prins_auto.png",
+    targetDate: "2027-02-06T14:11:00",
   },
   {
-    date: "07 Nov",
+    date: "07 Feb",
     title: "Optocht Heerlen",
     location: "Heerlen",
     type: "Optocht",
     image: "/optocht_heerlen_2024.jpg",
+    targetDate: "2027-02-07T14:11:00",
   },
   {
     date: "08 Feb",
@@ -116,6 +131,7 @@ export const UPCOMING_EVENTS = [
     location: "Hoensbroek",
     type: "Optocht",
     image: "/vlaggen.png",
+    targetDate: "2027-02-08T14:11:00",
   },
   {
     date: "09 Feb",
@@ -123,6 +139,7 @@ export const UPCOMING_EVENTS = [
     location: "Amicitia",
     type: "Feest",
     image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=800",
+    targetDate: "2027-02-09T14:11:00",
   },
   {
     date: "09 Feb",
@@ -130,6 +147,7 @@ export const UPCOMING_EVENTS = [
     location: "Heerlen",
     type: "Optocht",
     image: "/lichtstoet.png",
+    targetDate: "2027-02-09T14:11:00",
   },
   {
     date: "09 Feb",
@@ -137,6 +155,7 @@ export const UPCOMING_EVENTS = [
     location: "Amicitia",
     type: "Ceremonie",
     image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=800",
+    targetDate: "2027-02-09T14:11:00",
   },
   {
     date: "10 Feb",
@@ -144,6 +163,7 @@ export const UPCOMING_EVENTS = [
     location: "Hoensbroek",
     type: "Logistiek",
     image: "/opruimen.png",
+    targetDate: "2027-02-10T14:11:00",
   },
   {
     date: "10 Feb",
@@ -151,6 +171,7 @@ export const UPCOMING_EVENTS = [
     location: "Hoensbroek",
     type: "Traditie",
     image: "/Haring.png",
+    targetDate: "2027-02-10T14:11:00",
   },
 ];
 

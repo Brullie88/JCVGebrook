@@ -86,42 +86,71 @@ export default function Navigation({ activeSection, onNavigate }: Props) {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            className="fixed inset-0 bg-carnaval-cream z-40 flex flex-col items-center justify-center gap-8 md:hidden text-carnaval-charcoal"
-          >
-            {NAVIGATION.map((item) => (
+          <>
+            {/* Backdrop for closing */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/20 backdrop-blur-[2px] z-30 md:hidden"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+            
+            <motion.div
+              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.95 }}
+              className="fixed top-20 right-6 w-48 bg-white rounded-3xl shadow-2xl z-40 flex flex-col p-4 gap-1 md:hidden text-carnaval-charcoal border border-carnaval-charcoal/5"
+            >
+              {NAVIGATION.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    onNavigate(item.id);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`flex items-center gap-3 w-full p-2.5 rounded-xl transition-all font-display text-base tracking-wide ${
+                    activeSection === item.id 
+                      ? "bg-carnaval-red/10 text-carnaval-red" 
+                      : "hover:bg-carnaval-charcoal/5 active:bg-carnaval-charcoal/10"
+                  }`}
+                >
+                  {item.name}
+                </button>
+              ))}
+              
+              <div className="h-px bg-carnaval-charcoal/10 my-1" />
+              
               <button
-                key={item.id}
                 onClick={() => {
-                  onNavigate(item.id);
+                  onNavigate("join");
                   setIsMobileMenuOpen(false);
                 }}
-                className="text-3xl font-display tracking-widest uppercase hover:text-carnaval-gold"
+                className="w-full bg-carnaval-red text-carnaval-cream py-2.5 rounded-xl font-display text-base tracking-widest shadow-lg active:scale-[0.98] transition-all"
               >
-                {item.name}
+                Word lid
               </button>
-            ))}
-            <button
-              onClick={() => {
-                onNavigate("join");
-                setIsMobileMenuOpen(false);
-              }}
-              className="mt-4 bg-carnaval-red text-carnaval-cream px-10 py-4 rounded-full font-display text-2xl tracking-widest shadow-2xl"
-            >
-              Word lid
-            </button>
-            <div className="flex gap-8 mt-4">
-              <a href={CONTACT_INFO.facebook} target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-carnaval-charcoal/5 text-carnaval-charcoal hover:bg-carnaval-red hover:text-carnaval-cream transition-all">
-                <Facebook size={32} />
-              </a>
-              <a href={CONTACT_INFO.youtube} target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-carnaval-charcoal/5 text-carnaval-charcoal hover:bg-carnaval-red hover:text-carnaval-cream transition-all">
-                <Youtube size={32} />
-              </a>
-            </div>
-          </motion.div>
+
+              <div className="flex justify-center gap-4 mt-2">
+                <a 
+                  href={CONTACT_INFO.facebook} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 flex items-center justify-center rounded-xl bg-carnaval-charcoal/5 text-carnaval-charcoal hover:bg-carnaval-red hover:text-carnaval-cream transition-all"
+                >
+                  <Facebook size={20} />
+                </a>
+                <a 
+                  href={CONTACT_INFO.youtube} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 flex items-center justify-center rounded-xl bg-carnaval-charcoal/5 text-carnaval-charcoal hover:bg-carnaval-red hover:text-carnaval-cream transition-all"
+                >
+                  <Youtube size={20} />
+                </a>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>
