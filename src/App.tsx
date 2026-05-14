@@ -100,7 +100,7 @@ export default function App() {
                       }`}>
                         <Star size={32} />
                       </div>
-                      <h3 className="text-3xl mb-4 uppercase text-carnaval-charcoal">
+                      <h3 translate="no" className="text-3xl mb-4 uppercase text-carnaval-charcoal">
                         {item.title}
                       </h3>
                       <p className="text-carnaval-charcoal/60 font-accent mb-8 leading-relaxed">
@@ -112,6 +112,7 @@ export default function App() {
                                           item.title === "Jeugdraad" ? "council" : "agenda";
                           handleNavigate(targetId);
                         }}
+                        translate="no"
                         className={`flex items-center gap-2 font-display text-lg tracking-widest group ${
                           i % 2 === 0 ? "text-carnaval-red" : 
                           "text-carnaval-yellow"

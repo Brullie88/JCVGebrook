@@ -53,7 +53,7 @@ export default function Navigation({ activeSection, onNavigate }: Props) {
                 isScrolled ? "text-carnaval-charcoal" : "text-white"
               }`}
             >
-              {item.name}
+              <span translate="no">{item.name}</span>
             </button>
           ))}
           
@@ -68,6 +68,7 @@ export default function Navigation({ activeSection, onNavigate }: Props) {
 
           <button
             onClick={() => onNavigate("join")}
+            translate="no"
             className="bg-carnaval-red hover:bg-carnaval-bordeaux text-carnaval-cream px-6 py-2 rounded-full font-display text-lg tracking-wide shadow-lg hover:shadow-carnaval-red/20 transition-all active:scale-95"
           >
             Word lid
@@ -115,7 +116,7 @@ export default function Navigation({ activeSection, onNavigate }: Props) {
                       : "hover:bg-carnaval-charcoal/5 active:bg-carnaval-charcoal/10"
                   }`}
                 >
-                  {item.name}
+                  <span translate="no">{item.name}</span>
                 </button>
               ))}
               
@@ -126,6 +127,7 @@ export default function Navigation({ activeSection, onNavigate }: Props) {
                   onNavigate("join");
                   setIsMobileMenuOpen(false);
                 }}
+                translate="no"
                 className="w-full bg-carnaval-red text-carnaval-cream py-2.5 rounded-xl font-display text-base tracking-widest shadow-lg active:scale-[0.98] transition-all"
               >
                 Word lid

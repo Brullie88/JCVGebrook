@@ -121,7 +121,7 @@ export default function Footer({ onNavigate }: Props) {
                     onClick={() => onNavigate(item.id)}
                     className="text-carnaval-charcoal/60 hover:text-carnaval-green transition-colors text-sm uppercase tracking-widest text-left"
                   >
-                    {item.name}
+                    <span translate="no">{item.name}</span>
                   </button>
                 </li>
               ))}

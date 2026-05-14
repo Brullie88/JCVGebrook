@@ -39,7 +39,7 @@ export default function JoinUs() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-carnaval-red/20 text-carnaval-red border border-carnaval-red/30 text-xs font-bold tracking-widest uppercase mb-6">
+          <div translate="no" className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-carnaval-red/20 text-carnaval-red border border-carnaval-red/30 text-xs font-bold tracking-widest uppercase mb-6">
             <Sparkles size={14} />
             Word lid
           </div>
@@ -96,7 +96,7 @@ export default function JoinUs() {
         >
           <div className="absolute inset-0 bg-carnaval-yellow/20 blur-[100px] rounded-full opacity-20"></div>
           <div className="relative glass-card p-8 md:p-12 border-white/20 shadow-2xl backdrop-blur-2xl">
-            <h3 className="text-3xl mb-8 uppercase text-center">Word lid</h3>
+            <h3 translate="no" className="text-3xl mb-8 uppercase text-center">Word lid</h3>
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -161,6 +161,7 @@ export default function JoinUs() {
               <button
                 type="submit"
                 disabled={state.submitting}
+                translate="no"
                 className="w-full py-5 rounded-2xl yellow-gradient text-carnaval-charcoal font-display text-2xl tracking-widest shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {state.submitting ? "VERZENDEN..." : "WORD LID"}
