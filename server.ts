@@ -7,6 +7,9 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
+  // Middleware voor het parsen van JSON en CSP rapportages
+  app.use(express.json({ type: ['application/json', 'application/csp-report'] }));
+
   // Beveiligingsheaders met Helmet
   app.use(
     helmet({
@@ -30,6 +33,7 @@ async function startServer() {
           objectSrc: ["'none'"],
           baseUri: ["'self'"],
           upgradeInsecureRequests: [],
+          reportUri: ["/api/csp-report"],
         },
       },
       // Schakel de standaard frameguard uit omdat we frameAncestors in CSP gebruiken
@@ -69,6 +73,13 @@ async function startServer() {
   // API routes
   app.get("/api/health", (req, res) => {
     res.json({ status: "ok" });
+  });
+
+  // CSP Report endpoint
+  app.post("/api/csp-report", (req, res) => {
+    console.warn("🔐 CSP Violatie gedetecteerd:", req.body);
+    // Hier zou je de data kunnen opslaan in een database of verzenden naar een Slack-webhook
+    res.status(204).end();
   });
 
   // Vite middleware voor development

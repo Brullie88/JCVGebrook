@@ -79,14 +79,11 @@ export default function YouthRoyals() {
                 </div>
                 <div>
                   <h4 className="text-2xl mb-2 text-carnaval-red">Gevolg</h4>
-                  <div className="flex flex-wrap gap-3">
-                    <span className="px-4 py-1 rounded-full bg-carnaval-charcoal/5 border border-carnaval-charcoal/10 text-sm font-medium">
-                      Raad van Elf
-                    </span>
-                    <span className="px-4 py-1 rounded-full bg-carnaval-charcoal/5 border border-carnaval-charcoal/10 text-sm font-medium">
-                      Dansgarde
-                    </span>
-                  </div>
+                    <div className="flex flex-wrap gap-3">
+                      <span className="px-4 py-1 rounded-full bg-carnaval-charcoal/5 border border-carnaval-charcoal/10 text-sm font-medium">
+                        Raad van Elf
+                      </span>
+                    </div>
                   <p className="mt-4 text-carnaval-charcoal/60 font-accent text-sm leading-relaxed">
                     Samen met de Raad van Elf trekt Jeugdprins Beau 1e door het Gebrookser land.
                   </p>

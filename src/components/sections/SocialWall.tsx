@@ -17,7 +17,6 @@ const SOCIAL_POSTS = [
     text: "Onze volledige Jeugdraad in actie! Een geweldige club die de traditie van Gebrook hoog houdt. 💃🕺",
     likes: "3.1k",
     date: "2 dagen geleden",
-    isVideo: true,
     position: "object-top"
   },
   {

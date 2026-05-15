@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Navigation from "./components/Navigation";
@@ -242,6 +243,7 @@ export default function App() {
       </main>
 
       <Footer onNavigate={handleNavigate} />
+      <Analytics />
     </div>
   );
 }

@@ -9,12 +9,6 @@ const MILESTONES = [
     icon: <History size={24} />
   },
   {
-    year: "2017",
-    title: "Dansgarde",
-    description: "Eind 2017 werd de Dansgarde opgericht onder leiding van Tante Leen. Vijf dames zetten na weken oefenen een fantastische eerste dans neer.",
-    icon: <Music size={24} />
-  },
-  {
     year: "Heden",
     title: "Samenwerking Scholen",
     description: "We werken nauw samen met alle basisscholen in Hoensbroek om de jeugd te betrekken bij de Raad van 11 en ons prinsenpaar.",
