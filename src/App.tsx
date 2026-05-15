@@ -9,6 +9,7 @@ import JoinUs from "./components/sections/JoinUs";
 import SponsorsSection from "./components/sections/SponsorsSection";
 import SocialWall from "./components/sections/SocialWall";
 import Gallery from "./components/sections/Gallery";
+import PrivacyStatement from "./components/sections/PrivacyStatement";
 import Footer from "./components/Footer";
 import CountdownTimer from "./components/CountdownTimer";
 import { NEWS_FLASH, HIGHLIGHTS } from "./constants";
@@ -204,9 +205,20 @@ export default function App() {
               </div>
             </motion.div>
           )}
+
+          {activeTab === "privacy" && (
+            <motion.div
+              key="privacy-page"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <PrivacyStatement />
+            </motion.div>
+          )}
           
           {/* Fallback for other tabs - keep user on home or message */}
-          {activeTab !== "home" && activeTab !== "join" && (
+          {activeTab !== "home" && activeTab !== "join" && activeTab !== "privacy" && (
             <motion.div
               key="placeholder"
               initial={{ opacity: 0 }}

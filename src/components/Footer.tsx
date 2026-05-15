@@ -204,7 +204,7 @@ export default function Footer({ onNavigate }: Props) {
           </div>
           <div className="flex gap-6">
             <button 
-              onClick={() => setActiveModal("privacy")}
+              onClick={() => onNavigate("privacy")}
               className="hover:text-carnaval-yellow transition-colors"
             >
               Privacy Policy
