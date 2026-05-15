@@ -48,14 +48,11 @@ async function startServer() {
     // Permissions-Policy
     res.setHeader(
       "Permissions-Policy",
-      "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+      "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()"
     );
-    // Voor oudere browsers die CSP frame-ancestors niet begrijpen, gebruiken we SAMEORIGIN
-    // Maar we moeten voorzichtig zijn: in de preview kan dit nog steeds problemen geven als de scanner streng is.
-    // Echter, SAMEORIGIN staat framing toe binnen hetzelfde domein. AI Studio proxy's vaak op manieren die dit kunnen breken.
-    // Voor maximale compatibiliteit in de editor laten we dit soms weg, maar de gebruiker vraagt er specifiek om.
-    // We proberen het met SAMEORIGIN en als het breekt, schakelen we het uit.
-    res.setHeader("X-Frame-Options", "SAMEORIGIN");
+    // Verwijder X-Frame-Options omdat frame-ancestors in CSP de moderne vervanger is
+    // en SAMEORIGIN de preview in AI Studio breekt.
+    res.removeHeader("X-Frame-Options");
     next();
   });
 
