@@ -52,7 +52,7 @@ export default function Hero({ onNext }: Props) {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center"
         >
-          <span className="inline-block px-4 py-1 rounded-full bg-carnaval-yellow/20 text-carnaval-yellow border border-carnaval-yellow/30 text-xs font-bold tracking-[0.3em] uppercase mb-6">
+          <span translate="no" className="inline-block px-4 py-1 rounded-full bg-carnaval-yellow/20 text-carnaval-yellow border border-carnaval-yellow/30 text-xs font-bold tracking-[0.3em] uppercase mb-6">
             Samen carnaval vieren — 1x11 Jaar Jubileum
           </span>
           <h1 className="text-6xl md:text-9xl font-display leading-[0.9] mb-8 text-carnaval-charcoal drop-shadow-xl select-none text-center">
