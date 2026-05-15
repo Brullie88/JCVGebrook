@@ -41,6 +41,9 @@ async function startServer() {
         includeSubDomains: true,
         preload: true,
       },
+      crossOriginResourcePolicy: { policy: "same-origin" },
+      crossOriginOpenerPolicy: { policy: "same-origin" },
+      crossOriginEmbedderPolicy: { policy: "credentialless" },
     })
   );
 
@@ -51,9 +54,15 @@ async function startServer() {
       "Permissions-Policy",
       "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()"
     );
-    // Verwijder X-Frame-Options omdat frame-ancestors in CSP de moderne vervanger is
+      // Verwijder X-Frame-Options omdat frame-ancestors in CSP de moderne vervanger is
     // en SAMEORIGIN de preview in AI Studio breekt.
     res.removeHeader("X-Frame-Options");
+    // Voorkom lax CORS beleid door expliciet Access-Control-Allow-Origin in te stellen
+    // In productie beperken we dit tot het eigen domein
+    const origin = process.env.NODE_ENV === "production" ? "https://jcvgebrook.vercel.app" : "*";
+    if (process.env.NODE_ENV === "production") {
+      res.setHeader("Access-Control-Allow-Origin", origin);
+    }
     next();
   });
 
