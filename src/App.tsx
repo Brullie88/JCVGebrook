@@ -11,6 +11,7 @@ import SponsorsSection from "./components/sections/SponsorsSection";
 import SocialWall from "./components/sections/SocialWall";
 import Gallery from "./components/sections/Gallery";
 import PrivacyStatement from "./components/sections/PrivacyStatement";
+import BackToTop from "./components/BackToTop";
 import Footer from "./components/Footer";
 import CountdownTimer from "./components/CountdownTimer";
 import { NEWS_FLASH, HIGHLIGHTS } from "./constants";
@@ -243,6 +244,7 @@ export default function App() {
       </main>
 
       <Footer onNavigate={handleNavigate} />
+      <BackToTop />
       <Analytics />
     </div>
   );
