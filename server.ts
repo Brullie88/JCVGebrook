@@ -28,6 +28,7 @@ async function startServer() {
             "https://aistudio.google.com"
           ],
           objectSrc: ["'none'"],
+          baseUri: ["'self'"],
           upgradeInsecureRequests: [],
         },
       },
