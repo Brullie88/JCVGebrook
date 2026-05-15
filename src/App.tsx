@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Navigation from "./components/Navigation";
 import Hero from "./components/sections/Hero";
 import YouthRoyals from "./components/sections/YouthRoyals";
@@ -230,6 +231,7 @@ export default function App() {
       </main>
 
       <Footer onNavigate={handleNavigate} />
+      <SpeedInsights />
     </div>
   );
 }
