@@ -18,8 +18,9 @@ async function startServer() {
           defaultSrc: ["'self'"],
           scriptSrc: ["'self'"],
           styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
-          imgSrc: ["'self'", "data:", "blob:", "https:"],
-          fontSrc: ["'self'", "https:", "data:"],
+          imgSrc: ["'self'", "data:", "blob:", "https://images.unsplash.com", "https://*.facebook.com", "https://*.fbcdn.net"],
+          fontSrc: ["'self'", "https://fonts.gstatic.com", "data:"],
+          formAction: ["'self'", "https://formspree.io"],
           connectSrc: ["'self'", "https://formspree.io", "https://vitals.vercel-insights.com"],
           frameSrc: ["'self'", "https://www.youtube.com", "https://*.facebook.com"],
           // CRUCIAAL: Sta framing toe voor Google AI Studio zodat de site zichtbaar blijft in het voorbeeldvenster
